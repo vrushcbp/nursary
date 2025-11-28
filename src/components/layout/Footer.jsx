@@ -3,11 +3,13 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaGooglePlusG, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
+
 const Footer = () => {
+  const quickLinks = ['Purchase','Payment','Return','Shipping','Orders','FAQs','News','Advertise','Career','Policies']
   return (
     <footer className="bg-green-500 text-white pt-12 pb-6 px-6 md:px-16 ">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
-        
+
         {/* Brand Info */}
         <div className='flex flex-col items-center'>
           <h2 className="text-2xl  font-bold text-white mb-3">ALAZEA</h2>
@@ -27,16 +29,13 @@ const Footer = () => {
         <div className='flex flex-col items-center'>
           <h3 className="text-lg font-semibold mb-3">QUICK LINKS</h3>
           <ul className="space-y-2 underline text-blue-300">
-            <li>Purchase</li>
-            <li>Payment</li>
-            <li>Return</li>
-            <li>Shipping</li>
-            <li>Orders</li>
-            <li>FAQs</li>
-            <li>News</li>
-            <li>Advertise</li>
-            <li>Career</li>
-            <li>Policies</li>
+           {
+            quickLinks.map((item, index)=>{
+              return(
+                  <li className='' key={index}>{item}</li>
+              )
+            })
+           }
           </ul>
         </div>
 
