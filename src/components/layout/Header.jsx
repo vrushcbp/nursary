@@ -117,7 +117,9 @@ export default function Header() {
                           .toLowerCase()
                           .replace(/ /g, "-")}`} // Dynamic link to plant details
                         className="block px-2 py-1 rounded text-sm text-black hover:bg-primary text-center"
-                        onClick={() => setDropdownOpen(false)}
+                        onClick={() => {
+                          setDropdownOpen(false)
+                        }}
                       >
                         {item}
                       </Link>
@@ -151,6 +153,7 @@ export default function Header() {
               key={index}
               to={item.href}
               className="block text-white font-medium hover:text-green-700"
+              onClick={toggleMenu}
             >
               {item.label}
             </Link>
@@ -182,6 +185,7 @@ export default function Header() {
                               .toLowerCase()
                               .replace(/ /g, "-")}`} // Dynamic link for mobile
                             className="text-sm text-white hover:text-green-700"
+                            onClick={toggleMenu}
                           >
                             {item}
                           </Link>
